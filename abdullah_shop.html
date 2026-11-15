@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="আবদুল্লাহ শপ - গ্যাজেট ও প্রয়োজনীয় পণ্যের অনলাইন শপ।">
+  <title>আবদুল্লাহ শপ | Abdullah Shop</title>
+  <style>
+    :root{--navy:#10243a;--blue:#1769aa;--gold:#f5b942;--ink:#182230;--muted:#687586;--bg:#f5f7fa;--white:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit;text-decoration:none}button,input{font:inherit}.topbar{background:var(--navy);color:#eaf1f8;text-align:center;padding:8px 14px;font-size:13px}
+    header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 18px #14263a12}.nav{max-width:1160px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:22px}
+    .brand{font-weight:850;font-size:23px;color:var(--navy);white-space:nowrap}.brand span{color:var(--blue)}.search{flex:1;display:flex;background:#f0f3f7;border-radius:10px;overflow:hidden}
+    .search input{width:100%;border:0;background:transparent;padding:12px 14px;outline:0}.search button{border:0;background:var(--blue);color:#fff;padding:0 18px;cursor:pointer}
+    .cart{border:0;background:var(--navy);color:#fff;padding:11px 15px;border-radius:9px;cursor:pointer;white-space:nowrap}
+    .hero{max-width:1160px;margin:24px auto;padding:0 20px}.hero-inner{border-radius:20px;overflow:hidden;background:linear-gradient(115deg,#10243a,#1769aa);color:#fff;padding:54px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:270px}
+    .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.2;margin:0 0 12px}.hero p{color:#e0eaf4;max-width:540px;margin:0 0 22px;line-height:1.8}.cta{display:inline-block;background:var(--gold);color:#182230;font-weight:750;padding:12px 22px;border-radius:9px}
+    .hero-mark{font-size:100px;opacity:.9;filter:drop-shadow(0 12px 15px #0003)}
+    .wrap{max-width:1160px;margin:0 auto;padding:10px 20px 48px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:26px 0 16px}.section-head h2{margin:0;font-size:25px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.category{background:#fff;border:1px solid #e9edf2;border-radius:13px;padding:18px;text-align:center;font-weight:700}.category b{display:block;font-size:28px;margin-bottom:7px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}.filter{border:1px solid #dce3eb;background:#fff;border-radius:30px;padding:8px 15px;cursor:pointer}.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{background:#fff;border:1px solid #e9edf2;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}.product-art{height:165px;background:linear-gradient(145deg,#edf3f8,#dce8f3);display:grid;place-items:center;font-size:66px}.product-info{padding:14px;display:flex;flex-direction:column;flex:1}.tag{font-size:11px;color:var(--blue);font-weight:750}.product h3{font-size:16px;margin:5px 0 7px}.desc{font-size:13px;color:var(--muted);line-height:1.5;min-height:38px}.price{font-weight:800;font-size:18px;margin:10px 0}.old{font-size:13px;color:#929ba6;text-decoration:line-through;font-weight:400;margin-left:6px}.add{margin-top:auto;border:0;border-radius:8px;background:var(--blue);color:white;padding:10px;cursor:pointer;font-weight:700}.add:hover{background:var(--navy)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.feature{background:#fff;border-radius:12px;padding:17px;display:flex;gap:12px;align-items:center}.feature b{display:block}.feature small{color:var(--muted)}
+    footer{background:var(--navy);color:#eaf1f8;padding:35px 20px}.foot{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.foot p{color:#c2d0de;font-size:14px;max-width:440px;line-height:1.7}.copyright{text-align:center;color:#aebdcb;border-top:1px solid #ffffff22;margin:25px auto 0;padding-top:17px;font-size:12px}
+    .notice{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#172b40;color:white;padding:11px 18px;border-radius:9px;box-shadow:0 8px 24px #0003;display:none;z-index:20}
+    @media(max-width:800px){.nav{flex-wrap:wrap;gap:12px}.brand{flex:1}.search{order:3;flex-basis:100%}.hero-inner{padding:35px 25px}.hero-mark{font-size:70px}.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.hero-inner{min-height:240px}.hero-mark{display:none}.products{gap:10px}.product-art{height:130px;font-size:53px}.product-info{padding:11px}.product h3{font-size:14px}.features{grid-template-columns:1fr}.section-head h2{font-size:21px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">আবদুল্লাহ শপে স্বাগতম | আপনার পছন্দের গ্যাজেট ও প্রয়োজনীয় পণ্য এক জায়গায়</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#">আবদুল্লাহ <span>শপ</span></a>
+      <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন"><button type="submit">খুঁজুন</button></form>
+      <button class="cart" onclick="showCart()">🛒 কার্ট (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div><h1>স্মার্ট কেনাকাটা<br>শুরু হোক এখানেই</h1><p>দৈনন্দিন ব্যবহার্য গ্যাজেট, টেক অ্যাক্সেসরিজ এবং বাছাই করা প্রয়োজনীয় পণ্য কিনুন সহজেই।</p><a class="cta" href="#products">পণ্য দেখুন</a></div>
+        <div class="hero-mark" aria-hidden="true">🛍️</div>
+      </div>
+    </section>
+    <section class="wrap">
+      <div class="section-head"><div><h2>ক্যাটাগরি অনুযায়ী কেনাকাটা</h2><p>আপনার প্রয়োজনের পণ্যটি বেছে নিন</p></div></div>
+      <div class="categories">
+        <a class="category" href="#products" onclick="setCategory('গ্যাজেট')"><b>🎧</b>গ্যাজেট</a>
+        <a class="category" href="#products" onclick="setCategory('মোবাইল অ্যাক্সেসরিজ')"><b>📱</b>মোবাইল অ্যাক্সেসরিজ</a>
+        <a class="category" href="#products" onclick="setCategory('স্মার্ট ডিভাইস')"><b>⌚</b>স্মার্ট ডিভাইস</a>
+        <a class="category" href="#products" onclick="setCategory('অন্যান্য')"><b>🎁</b>অন্যান্য পণ্য</a>
+      </div>
+      <div class="section-head" id="products"><div><h2>জনপ্রিয় পণ্য</h2><p>নমুনা পণ্য। আপনার আসল পণ্যের ছবি, দাম ও বিবরণ দিয়ে পরিবর্তন করুন।</p></div></div>
+      <div class="filters">
+        <button class="filter active" onclick="setCategory('সব')">সব পণ্য</button>
+        <button class="filter" onclick="setCategory('গ্যাজেট')">গ্যাজেট</button>
+        <button class="filter" onclick="setCategory('মোবাইল অ্যাক্সেসরিজ')">মোবাইল অ্যাক্সেসরিজ</button>
+        <button class="filter" onclick="setCategory('স্মার্ট ডিভাইস')">স্মার্ট ডিভাইস</button>
+        <button class="filter" onclick="setCategory('অন্যান্য')">অন্যান্য</button>
+      </div>
+      <div class="products" id="productGrid"></div>
+      <div class="features">
+        <div class="feature"><span>🚚</span><div><b>সারা দেশে ডেলিভারি</b><small>আপনার ঠিকানায় পণ্য পৌঁছে দিন</small></div></div>
+        <div class="feature"><span>💳</span><div><b>সহজ পেমেন্ট</b><small>আপনার সুবিধামতো পেমেন্ট ব্যবস্থা</small></div></div>
+        <div class="feature"><span>💬</span><div><b>কাস্টমার সাপোর্ট</b><small>পণ্য সম্পর্কে জানতে যোগাযোগ করুন</small></div></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="foot">
+      <div><div class="brand" style="color:white">আবদুল্লাহ <span>শপ</span></div><p>গ্যাজেট ও প্রয়োজনীয় পণ্যের নির্ভরযোগ্য অনলাইন শপ। আপনার কেনাকাটাকে সহজ ও স্বাচ্ছন্দ্যময় করাই আমাদের লক্ষ্য।</p></div>
+      <div><b>যোগাযোগ</b><p>ফোন: আপনার ফোন নম্বর যোগ করুন<br>ইমেইল: আপনার ইমেইল যোগ করুন<br>ঠিকানা: আপনার ব্যবসার ঠিকানা যোগ করুন</p></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Abdullah Shop. সর্বস্বত্ব সংরক্ষিত।</div>
+  </footer>
+  <div class="notice" id="notice" role="status"></div>
+<script>
+  // এখানে আপনার আসল পণ্যের নাম, ক্যাটাগরি, দাম ও বিবরণ বসান।
+  const products = [
+    {id:1,name:'ওয়্যারলেস ব্লুটুথ ইয়ারবাড',category:'গ্যাজেট',price:1250,old:1500,icon:'🎧',desc:'দৈনন্দিন ব্যবহারের জন্য ওয়্যারলেস অডিও ডিভাইস।'},
+    {id:2,name:'ফাস্ট চার্জিং অ্যাডাপ্টার',category:'মোবাইল অ্যাক্সেসরিজ',price:650,old:800,icon:'🔌',desc:'সুবিধাজনক চার্জিং অ্যাক্সেসরিজ।'},
+    {id:3,name:'স্মার্ট ওয়াচ',category:'স্মার্ট ডিভাইস',price:1850,old:2200,icon:'⌚',desc:'স্টাইলিশ ডিজাইনের স্মার্ট ডিভাইস।'},
+    {id:4,name:'পোর্টেবল ব্লুটুথ স্পিকার',category:'গ্যাজেট',price:1450,old:1700,icon:'🔊',desc:'বহনযোগ্য স্পিকার, ঘরে বা বাইরে ব্যবহার করুন।'},
+    {id:5,name:'মোবাইল স্ট্যান্ড',category:'মোবাইল অ্যাক্সেসরিজ',price:350,old:450,icon:'📱',desc:'ভিডিও দেখা ও অনলাইন কাজের জন্য উপযোগী।'},
+    {id:6,name:'মিনি ডেস্ক ল্যাম্প',category:'অন্যান্য',price:550,old:700,icon:'💡',desc:'পড়ার টেবিল বা কাজের জায়গার জন্য।'},
+    {id:7,name:'ফিটনেস ব্যান্ড',category:'স্মার্ট ডিভাইস',price:990,old:1200,icon:'📟',desc:'হালকা ও ব্যবহারবান্ধব স্মার্ট অ্যাক্সেসরি।'},
+    {id:8,name:'পাওয়ার ব্যাংক',category:'গ্যাজেট',price:1600,old:1900,icon:'🔋',desc:'ভ্রমণ ও দৈনন্দিন ব্যবহারের চার্জিং সঙ্গী।'}
+  ];
+  let cart = [];
+  let currentCategory = 'সব';
+  let currentSearch = '';
+  const taka = n => '৳' + n.toLocaleString('bn-BD');
+  function renderProducts(){
+    const filtered = products.filter(p => (currentCategory==='সব'||p.category===currentCategory) && (p.name.toLowerCase().includes(currentSearch.toLowerCase())||p.category.toLowerCase().includes(currentSearch.toLowerCase())));
+    document.getElementById('productGrid').innerHTML = filtered.length ? filtered.map(p=>`
+      <article class="product"><div class="product-art">${p.icon}</div><div class="product-info">
+      <span class="tag">${p.category}</span><h3>${p.name}</h3><div class="desc">${p.desc}</div>
+      <div class="price">${taka(p.price)} <span class="old">${taka(p.old)}</span></div>
+      <button class="add" onclick="addToCart(${p.id})">কার্টে যোগ করুন</button></div></article>`).join('') : '<p>এই নামে কোনো পণ্য পাওয়া যায়নি।</p>';
+    document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.textContent.trim()===(currentCategory==='সব'?'সব পণ্য':currentCategory)));
+  }
+  function setCategory(category){currentCategory=category;renderProducts()}
+  function addToCart(id){const p=products.find(x=>x.id===id);cart.push(p);document.getElementById('cartCount').textContent=cart.length;notify(p.name+' কার্টে যোগ হয়েছে।')}
+  function showCart(){
+    if(!cart.length){notify('আপনার কার্ট এখন খালি।');return}
+    const total=cart.reduce((s,p)=>s+p.price,0);
+    const summary=cart.map(p=>p.name+' - '+taka(p.price)).join('\\n');
+    alert('আপনার কার্টে '+cart.length+'টি পণ্য আছে:\\n\\n'+summary+'\\n\\nমোট: '+taka(total)+'\\n\\nঅর্ডার সম্পন্ন করতে ওয়েবসাইটে checkout ও পেমেন্ট ব্যবস্থা যুক্ত করতে হবে।');
+  }
+  function notify(message){const el=document.getElementById('notice');el.textContent=message;el.style.display='block';clearTimeout(window.noticeTimer);window.noticeTimer=setTimeout(()=>el.style.display='none',2200)}
+  document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();currentSearch=document.getElementById('searchInput').value;renderProducts()});
+  document.getElementById('year').textContent=new Date().getFullYear();
+  renderProducts();
+</script>
+</body>
+</html>
